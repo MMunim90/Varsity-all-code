@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      padding: 100px;
+    }
+    .main-div {
+      display: flex;
+      gap: 120px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 70px;
+      margin-bottom: 70px;
+      font-size: 25px;
+    }
+    .center {
+      text-align: center;
+    }
+    .space {
+      display: flex;
+      gap: 20px;
+    }
+    .gap {
+      margin-left: 65px;
+      margin-top: 15px;
+    }
+  </style>
+  <body>
+    <h1 class="center">General Admission Registration</h1>
+    <div class="main-div">
+      <div>
+        <div class="space">
+          <label>Name:</label>
+          <input type="text" placeholder="First Name" />
+          <input type="text" placeholder="Last Name" />
+        </div>
+
+        <br />
+        <br />
+
+        <div class="space">
+          <label>Email:</label>
+          <input type="text" placeholder="sample@example.com" />
+        </div>
+
+        <br />
+        <br />
+
+        <div class="space">
+          <label>Gender:</label>
+          <input type="radio" name="gender" /> Male
+          <input type="radio" name="gender" /> Female
+        </div>
+
+        <br />
+        <br />
+
+        <div class="space">
+          <label>Phone:</label>
+          <input type="text" />
+        </div>
+
+        <br />
+        <br />
+
+        <label class="space">Emergency Contact: </label>
+        <input class="gap" type="text" />
+
+        <br />
+        <br />
+
+        <label>Do you require parking?</label>
+        <div class="gap">
+          <input type="radio" name="parking" /> Yes
+          <input type="radio" name="parking" /> No
+        </div>
+
+        <br />
+        <br />
+
+        <label>What is your room preference?</label>
+        <div class="gap">
+          <input type="radio" name="room" />Single Room <br />
+          <input type="radio" name="room" />Shared Room <br />
+          <input type="radio" name="room" />No Room Needed
+        </div>
+      </div>
+
+      <div>
+        <label>Do you have dietary restrictions?</label>
+        <div class="gap">
+          <input type="radio" name="dietary" />None<br />
+          <input type="radio" name="dietary" />Vegetarian<br />
+          <input type="radio" name="dietary" />Glutten Allergy<br />
+          <input type="radio" name="dietary" />Lactose Allergy<br />
+          <input type="radio" name="dietary" />Nut Allergy<br />
+          <input type="radio" name="dietary" />Shellfish Allergy
+        </div>
+
+        <br />
+        <br />
+
+        <label>What activities will you attend?</label>
+        <div class="gap">
+          <input type="radio" name="activities" />Awards Gala Dinner<br />
+          <input type="radio" name="activities" />Luncheon<br />
+          <input type="radio" name="activities" />Town Hall
+        </div>
+
+        <br />
+        <br />
+
+        <label
+          >Do you want to see the list of other <br />
+          attendees and their profiles on the <br />
+          official event app?</label
+        >
+        <div class="gap">
+          <input type="radio" name="event" /> Yes
+          <input type="radio" name="event" /> No
+        </div>
+
+        <br />
+        <br />
+      </div>
+    </div>
+    <div class="center">
+      <button
+        style="
+          background-color: lightblue;
+          color: white;
+          font-size: 20px;
+          padding: 7px;
+        "
+      >
+        Submit
+      </button>
+    </div>
+  </body>
+</html>
