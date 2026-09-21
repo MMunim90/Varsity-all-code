@@ -7,40 +7,40 @@
 int isKeyword(char *word)
 {
     if (strcmp(word, "auto") == 0 ||
-        strcmp(word, "break") == 0 ||
-        strcmp(word, "case") == 0 ||
-        strcmp(word, "char") == 0 ||
-        strcmp(word, "const") == 0 ||
-        strcmp(word, "continue") == 0 ||
-        strcmp(word, "default") == 0 ||
-        strcmp(word, "do") == 0 ||
-        strcmp(word, "double") == 0 ||
-        strcmp(word, "else") == 0 ||
-        strcmp(word, "enum") == 0 ||
-        strcmp(word, "extern") == 0 ||
-        strcmp(word, "float") == 0 ||
-        strcmp(word, "for") == 0 ||
-        strcmp(word, "goto") == 0 ||
-        strcmp(word, "if") == 0 ||
-        strcmp(word, "inline") == 0 ||
-        strcmp(word, "int") == 0 ||
-        strcmp(word, "long") == 0 ||
-        strcmp(word, "register") == 0 ||
-        strcmp(word, "restrict") == 0 ||
-        strcmp(word, "return") == 0 ||
-        strcmp(word, "short") == 0 ||
-        strcmp(word, "signed") == 0 ||
-        strcmp(word, "sizeof") == 0 ||
-        strcmp(word, "static") == 0 ||
-        strcmp(word, "struct") == 0 ||
-        strcmp(word, "switch") == 0 ||
-        strcmp(word, "typedef") == 0 ||
-        strcmp(word, "union") == 0 ||
-        strcmp(word, "unsigned") == 0 ||
-        strcmp(word, "void") == 0 ||
-        strcmp(word, "volatile") == 0 ||
-        strcmp(word, "while") == 0 ||
-        strcmp(word, "_Bool") == 0)
+            strcmp(word, "break") == 0 ||
+            strcmp(word, "case") == 0 ||
+            strcmp(word, "char") == 0 ||
+            strcmp(word, "const") == 0 ||
+            strcmp(word, "continue") == 0 ||
+            strcmp(word, "default") == 0 ||
+            strcmp(word, "do") == 0 ||
+            strcmp(word, "double") == 0 ||
+            strcmp(word, "else") == 0 ||
+            strcmp(word, "enum") == 0 ||
+            strcmp(word, "extern") == 0 ||
+            strcmp(word, "float") == 0 ||
+            strcmp(word, "for") == 0 ||
+            strcmp(word, "goto") == 0 ||
+            strcmp(word, "if") == 0 ||
+            strcmp(word, "inline") == 0 ||
+            strcmp(word, "int") == 0 ||
+            strcmp(word, "long") == 0 ||
+            strcmp(word, "register") == 0 ||
+            strcmp(word, "restrict") == 0 ||
+            strcmp(word, "return") == 0 ||
+            strcmp(word, "short") == 0 ||
+            strcmp(word, "signed") == 0 ||
+            strcmp(word, "sizeof") == 0 ||
+            strcmp(word, "static") == 0 ||
+            strcmp(word, "struct") == 0 ||
+            strcmp(word, "switch") == 0 ||
+            strcmp(word, "typedef") == 0 ||
+            strcmp(word, "union") == 0 ||
+            strcmp(word, "unsigned") == 0 ||
+            strcmp(word, "void") == 0 ||
+            strcmp(word, "volatile") == 0 ||
+            strcmp(word, "while") == 0 ||
+            strcmp(word, "_Bool") == 0)
     {
         return 1;
     }
@@ -160,8 +160,19 @@ int main()
 
             if (ch == '=')
                 printf("%-15cASSIGNMENT_OPERATOR\n", ch);
-            else
+
+            else if (ch == '+' || ch == '-' || ch == '*' ||
+                     ch == '/' || ch == '%')
                 printf("%-15cARITHMETIC_OPERATOR\n", ch);
+
+            else if (ch == '<' || ch == '>')
+                printf("%-15cRELATIONAL_OPERATOR\n", ch);
+
+            else if (ch == '!')
+                printf("%-15cLOGICAL_OPERATOR\n", ch);
+
+            else if (ch == '&' || ch == '|' || ch == '^' || ch == '~')
+                printf("%-15cBITWISE_OPERATOR\n", ch);
 
             i++;
         }
@@ -178,9 +189,9 @@ int main()
             int j = 0;
 
             while (input[i] != '\0' &&
-                   !isspace(input[i]) &&
-                   !isOperator(input[i]) &&
-                   !isSpecialSymbol(input[i]))
+                    !isspace(input[i]) &&
+                    !isOperator(input[i]) &&
+                    !isSpecialSymbol(input[i]))
             {
                 invalid[j++] = input[i++];
             }
